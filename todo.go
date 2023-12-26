@@ -37,7 +37,7 @@ func (l *List) Complete(i int) error {
 	ls := *l
 
 	if i <= 0 || i > len(ls) {
-		return fmt.Errorf("Item %d does not exist", i)
+		return fmt.Errorf("item %d does not exist", i)
 	}
 
 	// Adjusting index for 0 based index
@@ -50,7 +50,7 @@ func (l *List) Complete(i int) error {
 func (l *List) Delete(i int) error {
 	ls := *l
 	if i <= 0 || i > len(ls) {
-	return fmt.Errorf("Item %d does not exist", i)
+	return fmt.Errorf("item %d does not exist", i)
 	}
 	// Adjusting index for 0 based index
 	*l = append(ls[:i-1], ls[i:]...)
