@@ -18,7 +18,7 @@ func main() {
 	
 	// Use the Get method to read to do items from file
 	if err := l.Get(todoFileName); err != nil {
-		fmt.Println(os.Stderr, err)
+		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
 
@@ -37,6 +37,12 @@ func main() {
 		item := strings.Join(os.Args[1:], " ")
 
 		l.Add(item)
+
+		// Save the new list
+		if err := l.Save(todoFileName); err != nil {
+			fmt.Fprintln(os.Stderr, err)
+			os.Exit(1)
+		}
 	}
 }
 
