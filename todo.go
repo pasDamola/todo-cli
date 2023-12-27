@@ -43,7 +43,6 @@ func (l *List) Complete(i int) error {
 	// Adjusting index for 0 based index
 	ls[i-1].Done = true
 	ls[i-1].CompletedAt = time.Now()
-	fmt.Println(ls)
 	return nil
 }
 
