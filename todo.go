@@ -34,6 +34,18 @@ func (l *List) String() string {
 	 return formatted
 }
 
+func (l *List) ListUndone() List {
+	var undoneTasks []item
+	ls := *l
+	for _, t := range ls {
+		if !t.Done {
+			undoneTasks = append(undoneTasks, t)
+		}
+	}
+
+	return undoneTasks
+}
+
 // Add creates a new todo item and appends it to the list
 func (l *List) Add(task string) {
 	t := item{

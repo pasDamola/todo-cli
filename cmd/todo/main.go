@@ -30,6 +30,8 @@ func main() {
 	list := flag.Bool("list", false, "List all tasks")
 	complete := flag.Int("complete", 0, "Item to be completed")
 	delete := flag.Int("delete", 0, "Item to be deleted")
+	undone := flag.Bool("undone", false, "Display uncompleted items")
+
 	flag.Parse()
 
 	// Check if the user defined the ENV VAR for a custom file name
@@ -92,6 +94,13 @@ func main() {
 			fmt.Fprintln(os.Stderr, err)
 			os.Exit(1)
 		}
+
+	case *undone:
+		ls := l.ListUndone()
+		for _, t := range ls {
+			fmt.Println(t.Task)
+		}
+
 
 	default:
 		// Invalid flag provided
