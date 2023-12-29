@@ -1,1 +1,1 @@
-[{"Task":"One item","Done":false,"CreatedAt":"2023-12-27T13:39:22.616411+01:00","CompletedAt":"0001-01-01T00:00:00Z"},{"Task":"This comes from Stdin","Done":false,"CreatedAt":"2023-12-27T13:39:58.38041+01:00","CompletedAt":"0001-01-01T00:00:00Z"}]
+[{"Task":"This comes from Stdin","Done":false,"CreatedAt":"2023-12-27T13:39:58.38041+01:00","CompletedAt":"0001-01-01T00:00:00Z"}]
